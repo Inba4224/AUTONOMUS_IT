@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+  font-family: Arial;
+}
+body {
+ background-image: url("http://www.pngmagic.com/product_images/beautiful-blue-color-background.png");
+ background-color: #cccccc;
+ height: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+h1 {text-align: center;}
+h2 {text-align: center;}
+p {
+  font-size: 14px;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+button.b1{
+  background-color:#f5f5f0;
+  color:black;
+  border: 2px solid #929191;
+}
+button.b1:hover {background-color: #e7e7e7;}
+button.b2 {
+  background-color: #2e5cf3; 
+  color: whitesmoke; 
+  border: 2px solid #4c4c4d;
+}
+
+button.b2:hover {
+  background-color:lightblue;
+  color: black;
+}
+
+div.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width:80%;
+}
+
+
+</style>
+<body>
+<h1>STACK CREATION USING AUTOSCALING</h1>
+<h2>Specify stack details</h2>
+<div style="display: flex; align-items: flex-start; justify-content:center">
+
+
+<div class="container">
+  <form id="form1" action="{{url_for("UI")}}" method="post">
+
+    <label for="stackname">Stack Name</label>
+    <input type="text" id="stackname" name="stackname" placeholder="Enter a stack name..">
+    <p>Stack name can include letters(A-Z and a-z),numbers (0-9),and dashes(-).</p>
+    <h3>Parameters</h3> 
+    <p>(Parameters are defined in your template and allow you to input custom values when you create or update a stack)</p>
+  
+    <label for="dbname">Database Name</label>
+    <input type="text" id="dbname" name="DBName" placeholder="Enter the database name..">
+    <label for="DBpassword">Database Password</label>
+    <input type="text" id="DBpassword" name="password" placeholder="Enter the database password..">
+    <label for="dbroot">Database Root Password</label>
+    <input type="text" id="dbroot" name="DBroot" placeholder="Enter the MySQL root password..">
+    <label for="dbuser">Database User</label>
+    <input type="text" id="dbuser" name="DBuser" placeholder="Enter user name for wordpress database admin">
+    <label for="instance">Instance Type</label>
+    <div class="custom-select" style="width:100%;">
+        <select name="instance">
+          <option value="1">Choose the instance type</option>
+          <option value="t2.micro">t2.micro</option>
+          <option value="2.nano">t2.nano</option>
+          <option value="3.micro">t3.micro</option>
+          <option value="4.nano">t3.nano</option>
+        </select>
+      </div>
+  
+    <label for="keyname">KeyName</label>
+    <input type="text" id="keyname" name="KeyName" placeholder="Ec2 Key pair to allow SSH access to the instances ">
+    <label for="sshlocation">SSH Location</label>
+    <input type="text" id="sshlocation" name="SSHLocation" placeholder="Enter the IP address range..">
+    
+<div style="display: flex; width: 100%; justify-content: flex-end;margin-top:20px;">
+    <button class="b1">Cancel</button>
+    <button class="b2" type="submit">Create</button>
+    
+</div>
+</form>
+
+
+</div>
+</div>
+</body>
+</html>
